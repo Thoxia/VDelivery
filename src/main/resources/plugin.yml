@@ -1,0 +1,13 @@
+name: VDelivery
+version: '1.5-Build#2'
+main: net.weesli.vdelivery.VDelivery
+api-version: '1.13'
+author: Weesli
+softdepend: [PlaceholderAPI, TAB]
+commands:
+  vdelivery:
+    description: all commands for delivery plugin
+
+permission:
+  vdelivery.admin:
+    description: Main permission for all admin commands

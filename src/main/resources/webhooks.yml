@@ -1,0 +1,43 @@
+#
+#       Discord webhook settings
+#
+
+
+webhooks:
+  enable: false
+  end-embed:
+    title: "Teslimat etkinliği sonra erdi!"
+    description: "Etkinlik sonlandırıldı ve ödüller dağıtıldı! bir sonraki etkinliği bekleyin."
+    color: RED
+    author:
+      name: "VizmoStudio"
+      url: "https://vizmostudio.com"
+      icon_url: "https://vizmostudio.com/app/main/theme/assets/img/uploads/b8e1b658d1c98882a7270be70449ec23.png?v=1710360887"
+  webhook_url: "<URL>"
+  username: "VizmoStudio | Author by Weesli"
+  avatar_url: "https://vizmostudio.com/app/main/theme/assets/img/uploads/b8e1b658d1c98882a7270be70449ec23.png?v=1710360887"
+  embeds:
+    title: "Teslimat etkinliği başladı!"
+    description: "Etkinlik üzerinde belirlenen kategoriler \\n %category-1% \\n %category-2% \\n %category-3% \\n %category-4%"
+    color: GREEN
+    author:
+      name: "VizmoStudio"
+      url: "https://vizmostudio.com"
+      icon_url: "https://vizmostudio.com/app/main/theme/assets/img/uploads/b8e1b658d1c98882a7270be70449ec23.png?v=1710360887"
+    fields:
+      Input1:
+        name: "Eşya-1"
+        value: "%item-1%"
+        inline: true
+      Input2:
+        name: "Eşya-2"
+        value: "%item-2%"
+        inline: true
+      Input3:
+        name: "Eşya-3"
+        value: "%item-3%"
+        inline: true
+      Input4:
+        name: "Eşya-4"
+        value: "%item-4%"
+        inline: true

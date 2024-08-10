@@ -1,0 +1,151 @@
+#
+#          Author by Weesli | VizmoStudio
+#         discord.gg/vizmo && weesli.com.tr
+
+options:
+  # Eklenti tarafından gönderilecek mesajların başlarında gözüken imza.
+  prefix: '&3Vizmo&bStudio &8>> '
+  # saniye cinsinden yazınız.
+  event-end-time: 150
+  boss-bar:
+    enabled: false
+    color: RED
+    style: PROGRESS
+    text: "&eTeslimet etkinliği: &c%time%"
+  time-format: '%hour%s %minute%d %sec%sa'
+  delivery-type-lores:
+    give:
+      - "&7"
+      - "&e%element% eşyasından en çok toplayan kazanır!"
+      - "&eŞuanda : &a%count% &eeşya verdin!"
+      - "&7"
+      - "&aEşya vermek için tıkla."
+    kill:
+      - "&7"
+      - "&e%element% adlı canlıyı en çok öldüren kazanır!"
+      - "&eŞuanda : &a%count% &ecanlı öldürdün!"
+      - "&7"
+    break:
+      - "&7"
+      - "&e%element% adlı bloğu en çok kırabilen kazanır!"
+      - "&eŞuanda : &a%count% &ekez kırdın!"
+      - "&7"
+    craft:
+      - "&7"
+      - "&e%element% adlı eşyayı en çok üreten kazanır!"
+      - "&eŞuanda : &a%count% &ekez ürettin!"
+      - "&7"
+    farming:
+      - "&7"
+      - "&e%element% adlı bitkiyi en çok kırabilen kazanır!"
+      - "&eŞuanda : &a%count% &ebitki kırdın!"
+      - "&7"
+  # Ana eklenti menüsündeki ayarlar
+  menu-settings:
+    # Menü üzerinde gözükecek isim
+    title: '&8Teslimat'
+    # Menü boyutu (varsayılan: 27)
+    size: 27
+    # Kategorilerin eşyaları ana menude kaçıncı slotta gözükecek. (not şuanlık max 4 kategori yapılır o yüzden buraya 4 slot yazın)
+    item-slots:
+      - 10
+      - 12
+      - 14
+      - 16
+    item-lore:
+      - "&7"
+      - "&e%delivery-type%"
+    # Eklenti kategorisinde özel eşya oluşturmaya sağlar!
+    # eklenti menusunde teslimat eşyaları var ancak siz discord sunucusunu koymak istiyorsunuz ? işte tam olarak bu özelliği sağlar.
+    custom-items:
+      # eğer özel eşya olmasını istemiyorsanız kapatabilirsiniz ( default: true)
+      enable: true
+      # Terimsel ad
+      discord:
+        # eşyanın menu üzerindeki adı
+        item-name: "&bDiscord"
+        # eşyanın tipi
+        item-type: PAPER
+        # eşyanın açıklaması ( placeholderAPI destekler)
+        item-lore:
+          - ""
+          - "&3Discord sunucumuza katılmak için"
+          - "&3discord.gg/vizmo"
+        # Eşyanın custom model datası 0 yapmak eklentinin vanilla objesi olduğunu temsil eder
+        custom-model-data: 0
+        # Bu eşya etkinlik menusunde kaçıncı slotta duracağını simgeler
+        slot: 0
+
+# Teslimat eklentisinde bulunacak kategoriler
+categories:
+  # Buraya istediğiniz kategorinin terimsel ismini yazınız. Oyuncular tarafından görülmez, Türkçe harf kullanmak sıkıntıya yol açabilir.
+  tarim:
+    # Terimsel açtığınız kategoriye bir görünecek ad verin. Oyuncular tarafından görülecektir!
+    display-name: '&fTarım'
+  maden:
+    display-name: '&fMaden'
+  hayvancilik:
+    display-name: '&fHayvancılık'
+  avci:
+    display-name: '&fAvcılık'
+
+# Teslimat üzerinde çıkacak eşyaların ayarları
+items:
+  # Buraya eşya adı giriniz. Türkçe harf kullanmak sıkıntıya yol açabilir. Bu ismi oyuncular göremez, terimsel bir ad giriniz.
+  input1:
+    # Bu eşya hangi kategoride çıkacak? Kategorinin terimsel adınızı giriniz.
+    category: tarim
+    # Burada teslimat türü belirleniyor. Örn. oyuncu kıracak mı, verecek mi vb.
+    # give (vermek), break (kırmak), craft (eşyayı üretmek), farming (çiftçilik ile eşyayı toplamak 'sadece bitkiler için'), kill ( canavar öldürme )
+    # Yukarıdaki parametreleri kullanabilirsiniz.
+    delivery-type: farming
+    # Teslimat üzerinden verilecek eşyanın türü (İngilizce ve büyük harflerle yazın)
+    item-type: POTATO
+    # Sadece tarım için tarım yapılcak eşyanın adı (potato item adıdır, tarım adı POTATOES dir diğerleri de farklı listeyi internet üzerinden bakabilirsiniz)
+    farm-item: POTATOES
+    # Bu eşyanın adı ne olacak menü üzerinde gözükür. Teslim edilen eşya adını temsil etmez, sadece menü üzerinde gözükür.
+    item-name: '&aPatates'
+    # Eğer ItemsAdder, Oraxen tarzı eklentiler kullanıyorsanız ve bu eşyaların teslimat üzerinde gerçekleşmesini istiyorsanız,
+    # custom-model-data'sını buraya girebilirsiniz. Eğer 0 yaparsanız bu eşya vanilla obje olarak kalır.
+    custom-model-data: 0
+  input2:
+    category: maden
+    delivery-type: break
+    item-type: IRON_ORE
+    item-name: '&fDemir cevheri'
+    custom-model-data: 0
+  input3:
+    category: avci
+    delivery-type: kill
+    # Sadece öldürme tipinde 'kill-enemy' yerleştirin ve öldürülmesi gerkeen canlının adını girin.
+    kill-enemy: COW
+    item-type: COW_SPAWN_EGG
+    item-name: '&fInek'
+    custom-model-data: 0
+  hayvancilik:
+    category: hayvancilik
+    delivery-type: give
+    item-type: BEEF
+    item-name: '&fİnek eti'
+    custom-model-data: 0
+
+
+# Etkinlik sonrası ödüller
+rewards:
+  # İstediğiniz kategori için ödül ayarlamak için kategori adını giriniz. adı olmayan kategoriler ödül vermez!
+  hayvancilik:
+    # first = birinci , second = ikinci , third = üçüncü olarak ilerler şuanlık ilk 3 vardır!
+    first:
+      - "give %player% diamond 5"
+    second:
+      - "give %player% diamond 3"
+    third:
+      - "give %player% diamond 1"
+
+
+messages:
+  no-amount: '&cVerilecek hiçbir eşyan yok!'
+  give-item: '&a%amount% &eEşya verdin!'
+  no-start-event: '&cTeslimat etkinliği başlamadı!'
+  broadcast-message-end: '&eTesmilat etkinliği sona erdi!'
+  broadcast-message-start: '&eTesmilat etkinliği başladı!'
